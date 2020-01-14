@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Incident{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="{{ path('index') }}">Index</a> &gt; <a href="{{ path('incident_index') }}">{{ 'Incidents'|trans }}</a> &gt; {{ 'New Incident'|trans }}
+
+                <h1>Create new Incident</h1>
+
+                {{ include('incident/_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

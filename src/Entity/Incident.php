@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\IncidentRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Incident
 {
@@ -82,6 +83,28 @@ class Incident
      * @ORM\OneToMany(targetEntity="App\Entity\CorrectiveAction", mappedBy="incident", orphanRemoval=true)
      */
     private $correctiveActions;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $date;
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function onPrePersist()
+    {
+        $this->createdAt = new \DateTime("now");
+        $this->updatedAt = $this->createdAt;
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function onPreUpdate()
+    {
+        $this->updatedAt = new \DateTime("now");
+    }
 
     public function __construct()
     {
@@ -264,6 +287,18 @@ class Incident
                 $correctiveAction->setIncident(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }

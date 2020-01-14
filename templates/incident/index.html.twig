@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Incident index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="{{ path('index') }}">Index</a> &gt; {{ 'Incidents'|trans }}
+
+                <h1>Incident index</h1>
+
+                <a href="{{ path('incident_new') }}">{{ 'New Incident'|trans }}</a>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+{#                        <th>CreatedAt</th>#}
+{#                        <th>UpdatedAt</th>#}
+                        <th>Reporter</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>ImmediateAction</th>
+                        <th>Fixed</th>
+                        <th>CorrectiveActionNeeded</th>
+                        <th>ResponsibleQualityManager</th>
+{#                        <th>PoorQualityCosts</th>#}
+{#                        <th>Overhead</th>#}
+{#                        <th>Risk</th>#}
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for incident in incidents %}
+                        <tr>
+                            <td>{{ incident.id }}</td>
+{#                            <td>{{ incident.createdAt ? incident.createdAt|date('Y-m-d H:i:s') : '' }}</td>#}
+{#                            <td>{{ incident.updatedAt ? incident.updatedAt|date('Y-m-d H:i:s') : '' }}</td>#}
+                            <td>{{ incident.reporter }}</td>
+                            <td>{{ incident.type }}</td>
+                            <td>{{ incident.description }}</td>
+                            <td>{{ incident.immediateAction }}</td>
+                            <td>{{ incident.fixed ? 'Yes' : 'No' }}</td>
+                            <td>{{ incident.correctiveActionNeeded ? 'Yes' : 'No' }}</td>
+                            <td>{{ incident.responsibleQualityManager }}</td>
+{#                            <td>{{ incident.poorQualityCosts }}</td>#}
+{#                            <td>{{ incident.overhead }}</td>#}
+{#                            <td>{{ incident.risk }}</td>#}
+                            <td>
+                                <a href="{{ path('incident_show', {'id': incident.id}) }}">show</a>
+                                <a href="{{ path('incident_edit', {'id': incident.id}) }}">edit</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+{#                            <td colspan="14">no records found</td>#}
+                            <td colspan="9">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <a href="{{ path('incident_new') }}">{{ 'New Incident'|trans }}</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

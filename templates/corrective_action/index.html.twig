@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CorrectiveAction index{% endblock %}
+
+{% block body %}
+    <h1>CorrectiveAction index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>AnalysisAndIdea</th>
+                <th>Actions</th>
+                <th>ApprovedByManagement</th>
+                <th>ImplementedUntil</th>
+                <th>ImplementedBy</th>
+                <th>EffectivenessProofedBy</th>
+                <th>EffectivenessProofedAt</th>
+                <th>EffectivenessProofedThrough</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for corrective_action in corrective_actions %}
+            <tr>
+                <td>{{ corrective_action.id }}</td>
+                <td>{{ corrective_action.analysisAndIdea }}</td>
+                <td>{{ corrective_action.actions }}</td>
+                <td>{{ corrective_action.approvedByManagement ? 'Yes' : 'No' }}</td>
+                <td>{{ corrective_action.implementedUntil ? corrective_action.implementedUntil|date('Y-m-d') : '' }}</td>
+                <td>{{ corrective_action.implementedBy }}</td>
+                <td>{{ corrective_action.effectivenessProofedBy }}</td>
+                <td>{{ corrective_action.effectivenessProofedAt ? corrective_action.effectivenessProofedAt|date('Y-m-d') : '' }}</td>
+                <td>{{ corrective_action.effectivenessProofedThrough }}</td>
+                <td>
+                    <a href="{{ path('corrective_action_show', {'id': corrective_action.id}) }}">show</a>
+                    <a href="{{ path('corrective_action_edit', {'id': corrective_action.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('corrective_action_new') }}">Create new</a>
+{% endblock %}

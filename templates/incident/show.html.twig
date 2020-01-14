@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Incident{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="{{ path('index') }}">Index</a> &gt; <a href="{{ path('incident_index') }}">{{ 'Incidents'|trans }}</a> &gt; {{ 'Incident'|trans }} {{ incident.id }}
+
+                <h1>{{ 'Incident'|trans }} {{ incident.id }}</h1>
+
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ incident.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>CreatedAt</th>
+                        <td>{{ incident.createdAt ? incident.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                    </tr>
+                    <tr>
+                        <th>UpdatedAt</th>
+                        <td>{{ incident.updatedAt ? incident.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Reporter</th>
+                        <td>{{ incident.reporter }}</td>
+                    </tr>
+                    <tr>
+                        <th>Type</th>
+                        <td>{{ incident.type }}</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td>{{ incident.description }}</td>
+                    </tr>
+                    <tr>
+                        <th>ImmediateAction</th>
+                        <td>{{ incident.immediateAction }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fixed</th>
+                        <td>{{ incident.fixed ? 'Yes' : 'No' }}</td>
+                    </tr>
+                    <tr>
+                        <th>CorrectiveActionNeeded</th>
+                        <td>{{ incident.correctiveActionNeeded ? 'Yes' : 'No' }}</td>
+                    </tr>
+                    <tr>
+                        <th>ResponsibleQualityManager</th>
+                        <td>{{ incident.responsibleQualityManager }}</td>
+                    </tr>
+                    <tr>
+                        <th>PoorQualityCosts</th>
+                        <td>{{ incident.poorQualityCosts }}</td>
+                    </tr>
+                    <tr>
+                        <th>Overhead</th>
+                        <td>{{ incident.overhead }}</td>
+                    </tr>
+                    <tr>
+                        <th>Risk</th>
+                        <td>{{ incident.risk }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <a href="{{ path('incident_index') }}">back to list</a>
+
+                <a href="{{ path('incident_edit', {'id': incident.id}) }}">edit</a>
+
+                {{ include('incident/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}QM Tool{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>QM Tool</h1>
+            <ul>
+                <li><a href="{{ path('incident_new') }}">{% trans %}New Incident{% endtrans %}</a></li>
+                <li><a href="{{ path('incident_index') }}">{% trans %}View Incidents{% endtrans %}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

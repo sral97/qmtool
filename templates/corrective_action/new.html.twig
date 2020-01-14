@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CorrectiveAction{% endblock %}
+
+{% block body %}
+    <h1>Create new CorrectiveAction</h1>
+
+    {{ include('corrective_action/_form.html.twig') }}
+
+    <a href="{{ path('corrective_action_index') }}">back to list</a>
+{% endblock %}
