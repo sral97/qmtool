@@ -115,15 +115,15 @@
       </trans-unit>
       <trans-unit id="Ee1il8z" resname="Edit Corrective Action">
         <source>Edit Corrective Action</source>
-        <target>__Edit Corrective Action</target>
+        <target>Korrekturmaßnahme bearbeiten</target>
       </trans-unit>
       <trans-unit id="c4QhaRi" resname="New Corrective Action">
         <source>New Corrective Action</source>
-        <target>__New Corrective Action</target>
+        <target>Neue Korrekturmaßnahme</target>
       </trans-unit>
       <trans-unit id="Kw3N1AA" resname="actions">
         <source>actions</source>
-        <target>__actions</target>
+        <target>Aktionen</target>
       </trans-unit>
       <trans-unit id="haOas0X" resname="Yes">
         <source>Yes</source>
@@ -132,6 +132,34 @@
       <trans-unit id="HqRCoTS" resname="No">
         <source>No</source>
         <target>Nein</target>
+      </trans-unit>
+      <trans-unit id="OCdpL.3" resname="TYPE_ORGANISATIONAL_ERROR">
+        <source>TYPE_ORGANISATIONAL_ERROR</source>
+        <target>Organisatorischer Fehler</target>
+      </trans-unit>
+      <trans-unit id="UjW6Nse" resname="TYPE_MATERIAL_ERROR">
+        <source>TYPE_MATERIAL_ERROR</source>
+        <target>Material-Fehler</target>
+      </trans-unit>
+      <trans-unit id="kQ2OTnE" resname="TYPE_IT_ERROR">
+        <source>TYPE_IT_ERROR</source>
+        <target>EDV-Fehler</target>
+      </trans-unit>
+      <trans-unit id="SEG58l8" resname="TYPE_PREVENTIVE_ACTION">
+        <source>TYPE_PREVENTIVE_ACTION</source>
+        <target>Vorbeugemaßnahme</target>
+      </trans-unit>
+      <trans-unit id="8ogAkBD" resname="TYPE_IMPROVEMENT_ACTION">
+        <source>TYPE_IMPROVEMENT_ACTION</source>
+        <target>Verbesserungsmaßnahme</target>
+      </trans-unit>
+      <trans-unit id="lAIlX39" resname="TYPE_COMPLAINT">
+        <source>TYPE_COMPLAINT</source>
+        <target>Reklamation</target>
+      </trans-unit>
+      <trans-unit id="DsiJsWl" resname="TYPE_CORRECTIVE_ACTION">
+        <source>TYPE_CORRECTIVE_ACTION</source>
+        <target>Korrekturmaßnahme</target>
       </trans-unit>
     </body>
   </file>

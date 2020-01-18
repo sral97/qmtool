@@ -4,7 +4,9 @@ namespace App\Form\Type;
 
 use App\Entity\Incident;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,12 +19,14 @@ class IncidentType extends AbstractType
                 'data' => new \DateTime()
             ])
             ->add('reporter')
-            ->add('type')
+            ->add('type', ChoiceType::class, [
+                'choices' => Incident::getTypes(),
+            ])
             ->add('description')
             ->add('immediateAction')
             ->add('fixed')
             ->add('correctiveActionNeeded')
-            ->add('responsibleQualityManager')
+            ->add('responsibleQualityManager', HiddenType::class)
         ;
     }
 

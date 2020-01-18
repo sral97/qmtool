@@ -12,6 +12,14 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Incident
 {
+    const TYPE_ORGANISATIONAL_ERROR = 0;
+    const TYPE_MATERIAL_ERROR = 1;
+    const TYPE_IT_ERROR = 2;
+    const TYPE_PREVENTIVE_ACTION = 3;
+    const TYPE_IMPROVEMENT_ACTION = 4;
+    const TYPE_COMPLAINT = 5;
+    const TYPE_CORRECTIVE_ACTION = 6;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -287,5 +295,22 @@ class Incident
         $this->date = $date;
 
         return $this;
+    }
+
+    public static function getTypes(): array
+    {
+        $reflect = new \ReflectionClass(self::class);
+
+        return array_filter($reflect->getConstants(), function ($name) {
+            return strpos($name, 'TYPE_') === 0;
+        }, ARRAY_FILTER_USE_KEY);
+    }
+
+    public static function getTypeName(int $value): ?string
+    {
+        $reflect = new \ReflectionClass(self::class);
+        $constants = $reflect->getConstants();
+        $searchResult = array_search($value, $constants);
+        return ($searchResult !== false) ? $searchResult : 'Unknown Incident Type';
     }
 }
