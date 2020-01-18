@@ -11,7 +11,7 @@
                 &gt; <a href="{{ path('incident_show', {'id': incident.id}) }}">{{ 'Incident'|trans }} {{ incident.id }}</a>
                 &gt; {{ 'Edit Incident'|trans }}
 
-                <h1>Edit Incident</h1>
+                <h1>{{ 'Edit Incident %incidentId%'|trans({'%incidentId%': incident.id}, 'messages+intl-icu') }}</h1>
 
                 {{ include('incident/_form.html.twig', {'button_label': 'Update'}) }}
 

@@ -53,24 +53,24 @@
         <source>ImmediateAction</source>
         <target>Sofortmaßnahme</target>
       </trans-unit>
+      <trans-unit id="x1EuQFt" resname="Immediate action">
+        <source>Immediate action</source>
+        <target>Sofortmaßnahme</target>
+      </trans-unit>
       <trans-unit id="Ekb8k7y" resname="Fixed">
         <source>Fixed</source>
         <target>Behoben</target>
-      </trans-unit>
-      <trans-unit id="Gqj53qy" resname="CorrectiveActionNeeded">
-        <source>CorrectiveActionNeeded</source>
-        <target>Korrekturmaßnahme notwendig</target>
       </trans-unit>
       <trans-unit id="WJn3_.e" resname="Corrective action needed">
         <source>Corrective action needed</source>
         <target>Korrekturmaßnahme notwendig</target>
       </trans-unit>
-      <trans-unit id="g2mp45y" resname="ResponsibleQualityManager">
-        <source>ResponsibleQualityManager</source>
+      <trans-unit id="mg_Klpc" resname="Responsible quality manager">
+        <source>Responsible quality manager</source>
         <target>Verantwortlicher QM</target>
       </trans-unit>
-      <trans-unit id="7Khrctk" resname="PoorQualityCosts">
-        <source>PoorQualityCosts</source>
+      <trans-unit id="JSbh5JV" resname="Poor quality costs">
+        <source>Poor quality costs</source>
         <target>Fehlerkosten</target>
       </trans-unit>
       <trans-unit id="K93caff" resname="Overhead">
@@ -81,36 +81,36 @@
         <source>Risk</source>
         <target>Risiko</target>
       </trans-unit>
-      <trans-unit id="urN0Ftb" resname="AnalysisAndIdea">
-        <source>AnalysisAndIdea</source>
+      <trans-unit id="vKPzU8a" resname="Analysis and idea">
+        <source>Analysis and idea</source>
         <target>Analyse u./o. Beschreibung der Idee</target>
       </trans-unit>
       <trans-unit id=".4BZ3Gd" resname="Actions">
         <source>Actions</source>
         <target>Aktionen - Maßnahme - Projekte</target>
       </trans-unit>
-      <trans-unit id=".XYrtFk" resname="ApprovedByManagement">
-        <source>ApprovedByManagement</source>
+      <trans-unit id="5ib1rle" resname="Approved by management">
+        <source>Approved by management</source>
         <target>OK der Geschäftsführung</target>
       </trans-unit>
-      <trans-unit id="kDbuoE4" resname="ImplementedUntil">
-        <source>ImplementedUntil</source>
+      <trans-unit id="_tVmrVK" resname="Implemented until">
+        <source>Implemented until</source>
         <target>Umsetzung bis</target>
       </trans-unit>
-      <trans-unit id="GA7NvGS" resname="ImplementedBy">
-        <source>ImplementedBy</source>
+      <trans-unit id="fHKVCNQ" resname="Implemented by">
+        <source>Implemented by</source>
         <target>Umsetzung durch</target>
       </trans-unit>
-      <trans-unit id="G3_U1Ht" resname="EffectivenessProofedBy">
-        <source>EffectivenessProofedBy</source>
+      <trans-unit id="AO2Xdmv" resname="Effectiveness proofed by">
+        <source>Effectiveness proofed by</source>
         <target>Wirksamkeit ermittelt von</target>
       </trans-unit>
-      <trans-unit id="WJUr0kb" resname="EffectivenessProofedAt">
-        <source>EffectivenessProofedAt</source>
+      <trans-unit id="meSXnnp" resname="Effectiveness proofed at">
+        <source>Effectiveness proofed at</source>
         <target>Wirksamkeit ermittelt am</target>
       </trans-unit>
-      <trans-unit id="23OiWBx" resname="EffectivenessProofedThrough">
-        <source>EffectivenessProofedThrough</source>
+      <trans-unit id="X7QValp" resname="Effectiveness proofed through">
+        <source>Effectiveness proofed through</source>
         <target>Wirksamkeit ermittelt durch</target>
       </trans-unit>
       <trans-unit id="Ee1il8z" resname="Edit Corrective Action">
@@ -160,6 +160,54 @@
       <trans-unit id="DsiJsWl" resname="TYPE_CORRECTIVE_ACTION">
         <source>TYPE_CORRECTIVE_ACTION</source>
         <target>Korrekturmaßnahme</target>
+      </trans-unit>
+      <trans-unit id="6jObFMH" resname="Create new Incident">
+        <source>Create new Incident</source>
+        <target>Erstelle neues Ereignis</target>
+      </trans-unit>
+      <trans-unit id="TvwLHW1" resname="Create new CorrectiveAction">
+        <source>Create new CorrectiveAction</source>
+        <target>Erstelle neue Korrekturmaßnahme</target>
+      </trans-unit>
+      <trans-unit id="mcQKtAW" resname="Date">
+        <source>Date</source>
+        <target>Datum</target>
+      </trans-unit>
+      <trans-unit id="juyfabm" resname="Corrective Actions">
+        <source>Corrective Actions</source>
+        <target>Korrekturmaßnahmen</target>
+      </trans-unit>
+      <trans-unit id="HGMzUJ3" resname="show">
+        <source>show</source>
+        <target>Anzeigen</target>
+      </trans-unit>
+      <trans-unit id="JiEhxTc" resname="edit">
+        <source>edit</source>
+        <target>Bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Speichern</target>
+      </trans-unit>
+      <trans-unit id="wcEAnT8" resname="Update">
+        <source>Update</source>
+        <target>Änderungen speichern</target>
+      </trans-unit>
+      <trans-unit id="L4zAqvg" resname="Incident index">
+        <source>Incident index</source>
+        <target>Ereignis-Liste</target>
+      </trans-unit>
+      <trans-unit id="N_7Q1MG" resname="add corrective action">
+        <source>add corrective action</source>
+        <target>Korrekturmaßnahme hinzufügen</target>
+      </trans-unit>
+      <trans-unit id="z17qq0z" resname="Corrective Action">
+        <source>Corrective Action</source>
+        <target>Korrekturmaßnahme</target>
+      </trans-unit>
+      <trans-unit id="uSbUIwE" resname="Edit Incident %incidentId%">
+        <source>Edit Incident %incidentId%</source>
+        <target>Ereignis %incidentId% bearbeiten</target>
       </trans-unit>
     </body>
   </file>

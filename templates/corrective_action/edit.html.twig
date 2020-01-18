@@ -11,11 +11,9 @@
                 &gt; <a href="{{ path('incident_index') }}">{{ 'Incident'|trans }} {{ corrective_action.incident.id }}</a>
                 &gt; {{ 'Edit Corrective Action'|trans }}
 
-                <h1>Edit CorrectiveAction</h1>
+                <h1>{{ 'Edit Corrective Action'|trans }}</h1>
 
                 {{ include('corrective_action/_form.html.twig', {'button_label': 'Update'}) }}
-
-                <a href="{{ path('corrective_action_index') }}">back to list</a>
 
 {#                {{ include('corrective_action/_delete_form.html.twig') }}#}
             </div>

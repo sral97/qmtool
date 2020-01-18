@@ -71,7 +71,7 @@ class CorrectiveActionController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('corrective_action_index');
+            return $this->redirectToRoute('incident_show', ['id' => $correctiveAction->getIncident()->getId()]);
         }
 
         return $this->render('corrective_action/edit.html.twig', [

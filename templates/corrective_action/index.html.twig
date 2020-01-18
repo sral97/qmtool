@@ -9,14 +9,14 @@
         <thead>
             <tr>
                 <th>{{ 'Id'|trans }}</th>
-                <th>{{ 'AnalysisAndIdea'|trans }}</th>
+                <th>{{ 'Analysis and idea'|trans }}</th>
                 <th>{{ 'Actions'|trans }}</th>
-                <th>{{ 'ApprovedByManagement'|trans }}</th>
-                <th>{{ 'ImplementedUntil'|trans }}</th>
-                <th>{{ 'ImplementedBy'|trans }}</th>
-                <th>{{ 'EffectivenessProofedBy'|trans }}</th>
-                <th>{{ 'EffectivenessProofedAt'|trans }}</th>
-                <th>{{ 'EffectivenessProofedThrough'|trans }}</th>
+                <th>{{ 'Approved by management'|trans }}</th>
+                <th>{{ 'Implemented until'|trans }}</th>
+                <th>{{ 'Implemented by'|trans }}</th>
+                <th>{{ 'Effectiveness proofed by'|trans }}</th>
+                <th>{{ 'Effectiveness proofed at'|trans }}</th>
+                <th>{{ 'Effectiveness proofed through'|trans }}</th>
                 <th>{{ 'actions'|trans }}</th>
             </tr>
         </thead>
@@ -26,15 +26,15 @@
                 <td>{{ corrective_action.id }}</td>
                 <td>{{ corrective_action.analysisAndIdea }}</td>
                 <td>{{ corrective_action.actions }}</td>
-                <td>{{ corrective_action.approvedByManagement ? 'Yes' : 'No' }}</td>
-                <td>{{ corrective_action.implementedUntil ? corrective_action.implementedUntil|date('Y-m-d') : '' }}</td>
+                <td>{{ (corrective_action.approvedByManagement ? 'Yes' : 'No')|trans }}</td>
+                <td>{{ corrective_action.implementedUntil ? corrective_action.implementedUntil|date(date_format) : '' }}</td>
                 <td>{{ corrective_action.implementedBy }}</td>
                 <td>{{ corrective_action.effectivenessProofedBy }}</td>
-                <td>{{ corrective_action.effectivenessProofedAt ? corrective_action.effectivenessProofedAt|date('Y-m-d') : '' }}</td>
+                <td>{{ corrective_action.effectivenessProofedAt ? corrective_action.effectivenessProofedAt|date(date_format) : '' }}</td>
                 <td>{{ corrective_action.effectivenessProofedThrough }}</td>
                 <td>
-                    <a href="{{ path('corrective_action_show', {'id': corrective_action.id}) }}">show</a>
-                    <a href="{{ path('corrective_action_edit', {'id': corrective_action.id}) }}">edit</a>
+                    <a href="{{ path('corrective_action_show', {'id': corrective_action.id}) }}">{{ 'show'|trans }}</a>
+                    <a href="{{ path('corrective_action_edit', {'id': corrective_action.id}) }}">{{ 'edit'|trans }}</a>
                 </td>
             </tr>
         {% else %}

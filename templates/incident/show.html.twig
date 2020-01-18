@@ -37,7 +37,7 @@
                         <td>{{ incident.description }}</td>
                     </tr>
                     <tr>
-                        <th>{{ 'ImmediateAction'|trans }}</th>
+                        <th>{{ 'Immediate action'|trans }}</th>
                         <td>{{ incident.immediateAction }}</td>
                     </tr>
                     <tr>
@@ -45,15 +45,15 @@
                         <td>{{ (incident.fixed ? 'Yes' : 'No')|trans }}</td>
                     </tr>
                     <tr>
-                        <th>{{ 'CorrectiveActionNeeded'|trans }}</th>
+                        <th>{{ 'Corrective action needed'|trans }}</th>
                         <td>{{ (incident.correctiveActionNeeded ? 'Yes' : 'No')|trans }}</td>
                     </tr>
                     <tr>
-                        <th>{{ 'ResponsibleQualityManager'|trans }}</th>
+                        <th>{{ 'Responsible quality manager'|trans }}</th>
                         <td>{{ incident.responsibleQualityManager }}</td>
                     </tr>
                     <tr>
-                        <th>{{ 'PoorQualityCosts'|trans }}</th>
+                        <th>{{ 'Poor quality costs'|trans }}</th>
                         <td>{{ incident.poorQualityCosts }}</td>
                     </tr>
                     <tr>
@@ -68,20 +68,21 @@
                 </table>
 
                 {% if incident.correctiveActions|length > 0 %}
-                    <h1>Corrective Actions</h1>
+                    <h2>{{ 'Corrective Actions'|trans }}</h2>
 
                     <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th>{{ 'Id'|trans }}</th>
-                            <th>{{ 'AnalysisAndIdea'|trans }}</th>
+                            <th>{{ 'Analysis and idea'|trans }}</th>
                             <th>{{ 'Actions'|trans }}</th>
-                            <th>{{ 'ApprovedByManagement'|trans }}</th>
-                            <th>{{ 'ImplementedUntil'|trans }}</th>
-                            <th>{{ 'ImplementedBy'|trans }}</th>
-                            <th>{{ 'EffectivenessProofedBy'|trans }}</th>
-                            <th>{{ 'EffectivenessProofedAt'|trans }}</th>
-                            <th>{{ 'EffectivenessProofedThrough'|trans }}</th>
+                            <th>{{ 'Approved by management'|trans }}</th>
+                            <th>{{ 'Implemented until'|trans }}</th>
+                            <th>{{ 'Implemented by'|trans }}</th>
+                            <th>{{ 'Effectiveness proofed by'|trans }}</th>
+                            <th>{{ 'Effectiveness proofed at'|trans }}</th>
+                            <th>{{ 'Effectiveness proofed through'|trans }}</th>
+                            <th>{{ 'actions'|trans }}</th>
                         </tr>
                         </thead>
                         {% for corrective_action in incident.correctiveActions %}
@@ -91,22 +92,24 @@
                             <td>{{ corrective_action.analysisAndIdea }}</td>
                             <td>{{ corrective_action.actions }}</td>
                             <td>{{ (corrective_action.approvedByManagement ? 'Yes' : 'No')|trans }}</td>
-                            <td>{{ corrective_action.implementedUntil ? corrective_action.implementedUntil|date('Y-m-d') : '' }}</td>
+                            <td>{{ corrective_action.implementedUntil ? corrective_action.implementedUntil|date(date_format) : '' }}</td>
                             <td>{{ corrective_action.implementedBy }}</td>
                             <td>{{ corrective_action.effectivenessProofedBy }}</td>
-                            <td>{{ corrective_action.effectivenessProofedAt ? corrective_action.effectivenessProofedAt|date('Y-m-d') : '' }}</td>
+                            <td>{{ corrective_action.effectivenessProofedAt ? corrective_action.effectivenessProofedAt|date(date_format) : '' }}</td>
                             <td>{{ corrective_action.effectivenessProofedThrough }}</td>
+                            <td>
+                                <a href="{{ path('corrective_action_show', {'id': corrective_action.id}) }}">{{ 'show'|trans }}</a>
+                                <a href="{{ path('corrective_action_edit', {'id': corrective_action.id}) }}">{{ 'edit'|trans }}</a>
+                            </td>
                         </tr>
                         </tbody>
                         {% endfor %}
                     </table>
                 {% endif %}
 
-                <a class="btn btn-secondary" href="{{ path('incident_index') }}">back to list</a>
+                <a class="btn btn-primary" href="{{ path('incident_edit', {'id': incident.id}) }}">{{ 'edit'|trans }}</a>
 
-                <a class="btn btn-primary" href="{{ path('incident_edit', {'id': incident.id}) }}">edit</a>
-
-                <a class="btn btn-primary" href="{{ path('corrective_action_new', {'incident': incident.id}) }}">add corrective action</a>
+                <a class="btn btn-primary" href="{{ path('corrective_action_new', {'incident': incident.id}) }}">{{ 'add corrective action'|trans }}</a>
 
                 <br>
                 <br>

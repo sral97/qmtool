@@ -3,52 +3,62 @@
 {% block title %}CorrectiveAction{% endblock %}
 
 {% block body %}
-    <h1>CorrectiveAction</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="{{ path('index') }}">Index</a>
+                &gt; <a href="{{ path('incident_index') }}">{{ 'Incidents'|trans }}</a>
+                &gt; <a href="{{ path('incident_index') }}">{{ 'Incident'|trans }} {{ corrective_action.incident.id }}</a>
+                &gt; {{ 'Corrective Action'|trans }}
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ corrective_action.id }}</td>
-            </tr>
-            <tr>
-                <th>AnalysisAndIdea</th>
-                <td>{{ corrective_action.analysisAndIdea }}</td>
-            </tr>
-            <tr>
-                <th>Actions</th>
-                <td>{{ corrective_action.actions }}</td>
-            </tr>
-            <tr>
-                <th>ApprovedByManagement</th>
-                <td>{{ corrective_action.approvedByManagement ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>ImplementedUntil</th>
-                <td>{{ corrective_action.implementedUntil ? corrective_action.implementedUntil|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>ImplementedBy</th>
-                <td>{{ corrective_action.implementedBy }}</td>
-            </tr>
-            <tr>
-                <th>EffectivenessProofedBy</th>
-                <td>{{ corrective_action.effectivenessProofedBy }}</td>
-            </tr>
-            <tr>
-                <th>EffectivenessProofedAt</th>
-                <td>{{ corrective_action.effectivenessProofedAt ? corrective_action.effectivenessProofedAt|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>EffectivenessProofedThrough</th>
-                <td>{{ corrective_action.effectivenessProofedThrough }}</td>
-            </tr>
-        </tbody>
-    </table>
+                <h1>{{ 'Corrective Action'|trans }}</h1>
 
-    <a href="{{ path('corrective_action_index') }}">back to list</a>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>{{ 'Id'|trans }}</th>
+                        <td>{{ corrective_action.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>{{ 'Analysis and idea'|trans }}</th>
+                        <td>{{ corrective_action.analysisAndIdea }}</td>
+                    </tr>
+                    <tr>
+                        <th>{{ 'Actions'|trans }}</th>
+                        <td>{{ corrective_action.actions }}</td>
+                    </tr>
+                    <tr>
+                        <th>{{ 'Approved by management'|trans }}</th>
+                        <td>{{ (corrective_action.approvedByManagement ? 'Yes' : 'No')|trans }}</td>
+                    </tr>
+                    <tr>
+                        <th>{{ 'Implemented until'|trans }}</th>
+                        <td>{{ corrective_action.implementedUntil ? corrective_action.implementedUntil|date(date_format) : '' }}</td>
+                    </tr>
+                    <tr>
+                        <th>{{ 'Implemented by'|trans }}</th>
+                        <td>{{ corrective_action.implementedBy }}</td>
+                    </tr>
+                    <tr>
+                        <th>{{ 'Effectiveness proofed by'|trans }}</th>
+                        <td>{{ corrective_action.effectivenessProofedBy }}</td>
+                    </tr>
+                    <tr>
+                        <th>{{ 'Effectiveness proofed at'|trans }}</th>
+                        <td>{{ corrective_action.effectivenessProofedAt ? corrective_action.effectivenessProofedAt|date(date_format) : '' }}</td>
+                    </tr>
+                    <tr>
+                        <th>{{ 'Effectiveness proofed through'|trans }}</th>
+                        <td>{{ corrective_action.effectivenessProofedThrough }}</td>
+                    </tr>
+                    </tbody>
+                </table>
 
-    <a href="{{ path('corrective_action_edit', {'id': corrective_action.id}) }}">edit</a>
-
-    {{ include('corrective_action/_delete_form.html.twig') }}
+                <a class="btn btn-primary" href="{{ path('corrective_action_edit', {'id': corrective_action.id}) }}">{{ 'edit'|trans }}</a>
+                <br>
+                <br>
+{#                {{ include('corrective_action/_delete_form.html.twig') }}#}
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -8,9 +8,11 @@
             <div class="col">
                 <a href="{{ path('index') }}">Index</a> &gt; {{ 'Incidents'|trans }}
 
-                <h1>Incident index</h1>
+                <h1>{{ 'Incident index'|trans }}</h1>
 
-                <a href="{{ path('incident_new') }}">{{ 'New Incident'|trans }}</a>
+                <a class="btn btn-primary" href="{{ path('incident_new') }}">{{ 'New Incident'|trans }}</a>
+                <br>
+                <br>
 
                 <table class="table">
                     <thead>
@@ -21,11 +23,11 @@
                         <th>{{ 'Reporter'|trans }}</th>
                         <th>{{ 'Type'|trans }}</th>
                         <th>{{ 'Description'|trans }}</th>
-                        <th>{{ 'ImmediateAction'|trans }}</th>
+                        <th>{{ 'Immediate action'|trans }}</th>
                         <th>{{ 'Fixed'|trans }}</th>
-                        <th>{{ 'CorrectiveActionNeeded'|trans }}</th>
-                        <th>{{ 'ResponsibleQualityManager'|trans }}</th>
-{#                        <th>{{ 'PoorQualityCosts'|trans }}</th>#}
+                        <th>{{ 'Corrective action needed'|trans }}</th>
+                        <th>{{ 'Responsible quality manager'|trans }}</th>
+{#                        <th>{{ 'Poor quality costs'|trans }}</th>#}
 {#                        <th>{{ 'Overhead'|trans }}</th>#}
 {#                        <th>{{ 'Risk'|trans }}</th>#}
                         <th>{{ 'actions'|trans }}</th>
@@ -48,8 +50,8 @@
 {#                            <td>{{ incident.overhead }}</td>#}
 {#                            <td>{{ incident.risk }}</td>#}
                             <td>
-                                <a href="{{ path('incident_show', {'id': incident.id}) }}">show</a>
-                                <a href="{{ path('incident_edit', {'id': incident.id}) }}">edit</a>
+                                <a href="{{ path('incident_show', {'id': incident.id}) }}">{{ 'show'|trans }}</a>
+                                <a href="{{ path('incident_edit', {'id': incident.id}) }}">{{ 'edit'|trans }}</a>
                             </td>
                         </tr>
                     {% else %}
@@ -61,7 +63,9 @@
                     </tbody>
                 </table>
 
-                <a href="{{ path('incident_new') }}">{{ 'New Incident'|trans }}</a>
+                <a class="btn btn-primary" href="{{ path('incident_new') }}">{{ 'New Incident'|trans }}</a>
+                <br>
+                <br>
             </div>
         </div>
     </div>
