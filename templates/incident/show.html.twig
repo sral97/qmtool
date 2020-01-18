@@ -13,65 +13,102 @@
                 <table class="table">
                     <tbody>
                     <tr>
-                        <th>Id</th>
+                        <th>{{ 'Id'|trans }}</th>
                         <td>{{ incident.id }}</td>
                     </tr>
                     <tr>
-                        <th>CreatedAt</th>
+                        <th>{{ 'CreatedAt'|trans }}</th>
                         <td>{{ incident.createdAt ? incident.createdAt|date(date_time_format) : '' }}</td>
                     </tr>
                     <tr>
-                        <th>UpdatedAt</th>
+                        <th>{{ 'UpdatedAt'|trans }}</th>
                         <td>{{ incident.updatedAt ? incident.updatedAt|date(date_time_format) : '' }}</td>
                     </tr>
                     <tr>
-                        <th>Reporter</th>
+                        <th>{{ 'Reporter'|trans }}</th>
                         <td>{{ incident.reporter }}</td>
                     </tr>
                     <tr>
-                        <th>Type</th>
                         <td>{{ incident.type }}</td>
+                        <th>{{ 'Type'|trans }}</th>
                     </tr>
                     <tr>
-                        <th>Description</th>
+                        <th>{{ 'Description'|trans }}</th>
                         <td>{{ incident.description }}</td>
                     </tr>
                     <tr>
-                        <th>ImmediateAction</th>
+                        <th>{{ 'ImmediateAction'|trans }}</th>
                         <td>{{ incident.immediateAction }}</td>
                     </tr>
                     <tr>
-                        <th>Fixed</th>
-                        <td>{{ incident.fixed ? 'Yes' : 'No' }}</td>
+                        <th>{{ 'Fixed'|trans }}</th>
+                        <td>{{ (incident.fixed ? 'Yes' : 'No')|trans }}</td>
                     </tr>
                     <tr>
-                        <th>CorrectiveActionNeeded</th>
-                        <td>{{ incident.correctiveActionNeeded ? 'Yes' : 'No' }}</td>
+                        <th>{{ 'CorrectiveActionNeeded'|trans }}</th>
+                        <td>{{ (incident.correctiveActionNeeded ? 'Yes' : 'No')|trans }}</td>
                     </tr>
                     <tr>
-                        <th>ResponsibleQualityManager</th>
+                        <th>{{ 'ResponsibleQualityManager'|trans }}</th>
                         <td>{{ incident.responsibleQualityManager }}</td>
                     </tr>
                     <tr>
-                        <th>PoorQualityCosts</th>
+                        <th>{{ 'PoorQualityCosts'|trans }}</th>
                         <td>{{ incident.poorQualityCosts }}</td>
                     </tr>
                     <tr>
-                        <th>Overhead</th>
+                        <th>{{ 'Overhead'|trans }}</th>
                         <td>{{ incident.overhead }}</td>
                     </tr>
                     <tr>
-                        <th>Risk</th>
+                        <th>{{ 'Risk'|trans }}</th>
                         <td>{{ incident.risk }}</td>
                     </tr>
                     </tbody>
                 </table>
 
-                <a href="{{ path('incident_index') }}">back to list</a>
+                {% if incident.correctiveActions|length > 0 %}
+                    <h1>Corrective Actions</h1>
 
-                <a href="{{ path('incident_edit', {'id': incident.id}) }}">edit</a>
+                    <table class="table table-responsive">
+                        <thead>
+                        <tr>
+                            <th>{{ 'Id'|trans }}</th>
+                            <th>{{ 'AnalysisAndIdea'|trans }}</th>
+                            <th>{{ 'Actions'|trans }}</th>
+                            <th>{{ 'ApprovedByManagement'|trans }}</th>
+                            <th>{{ 'ImplementedUntil'|trans }}</th>
+                            <th>{{ 'ImplementedBy'|trans }}</th>
+                            <th>{{ 'EffectivenessProofedBy'|trans }}</th>
+                            <th>{{ 'EffectivenessProofedAt'|trans }}</th>
+                            <th>{{ 'EffectivenessProofedThrough'|trans }}</th>
+                        </tr>
+                        </thead>
+                        {% for corrective_action in incident.correctiveActions %}
+                        <tbody>
+                        <tr>
+                            <td>{{ corrective_action.id }}</td>
+                            <td>{{ corrective_action.analysisAndIdea }}</td>
+                            <td>{{ corrective_action.actions }}</td>
+                            <td>{{ (corrective_action.approvedByManagement ? 'Yes' : 'No')|trans }}</td>
+                            <td>{{ corrective_action.implementedUntil ? corrective_action.implementedUntil|date('Y-m-d') : '' }}</td>
+                            <td>{{ corrective_action.implementedBy }}</td>
+                            <td>{{ corrective_action.effectivenessProofedBy }}</td>
+                            <td>{{ corrective_action.effectivenessProofedAt ? corrective_action.effectivenessProofedAt|date('Y-m-d') : '' }}</td>
+                            <td>{{ corrective_action.effectivenessProofedThrough }}</td>
+                        </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                {% endif %}
 
-                {{ include('incident/_delete_form.html.twig') }}
+                <a class="btn btn-secondary" href="{{ path('incident_index') }}">back to list</a>
+
+                <a class="btn btn-primary" href="{{ path('incident_edit', {'id': incident.id}) }}">edit</a>
+
+                <a class="btn btn-primary" href="{{ path('corrective_action_new', {'incident': incident.id}) }}">add corrective action</a>
+
+{#                {{ include('incident/_delete_form.html.twig') }}#}
             </div>
         </div>
     </div>

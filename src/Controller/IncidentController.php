@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Incident;
-use App\Form\IncidentType;
+use App\Form\Type\IncidentType;
 use App\Repository\IncidentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

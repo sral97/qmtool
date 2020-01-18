@@ -25,6 +25,114 @@
         <source>Incidents</source>
         <target>Ereignisse</target>
       </trans-unit>
+      <trans-unit id="EhVukhv" resname="Id">
+        <source>Id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="_NU_9fk" resname="CreatedAt">
+        <source>CreatedAt</source>
+        <target>Erstellt am</target>
+      </trans-unit>
+      <trans-unit id="IMIzC8T" resname="UpdatedAt">
+        <source>UpdatedAt</source>
+        <target>Zuletzt geändert</target>
+      </trans-unit>
+      <trans-unit id="7XOP6IO" resname="Reporter">
+        <source>Reporter</source>
+        <target>Melder</target>
+      </trans-unit>
+      <trans-unit id="uq3fcPt" resname="Type">
+        <source>Type</source>
+        <target>Fehler Art</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Beschreibung</target>
+      </trans-unit>
+      <trans-unit id="D3elpN1" resname="ImmediateAction">
+        <source>ImmediateAction</source>
+        <target>Sofortmaßnahme</target>
+      </trans-unit>
+      <trans-unit id="Ekb8k7y" resname="Fixed">
+        <source>Fixed</source>
+        <target>Behoben</target>
+      </trans-unit>
+      <trans-unit id="Gqj53qy" resname="CorrectiveActionNeeded">
+        <source>CorrectiveActionNeeded</source>
+        <target>Korrekturmaßnahme notwendig</target>
+      </trans-unit>
+      <trans-unit id="WJn3_.e" resname="Corrective action needed">
+        <source>Corrective action needed</source>
+        <target>Korrekturmaßnahme notwendig</target>
+      </trans-unit>
+      <trans-unit id="g2mp45y" resname="ResponsibleQualityManager">
+        <source>ResponsibleQualityManager</source>
+        <target>Verantwortlicher QM</target>
+      </trans-unit>
+      <trans-unit id="7Khrctk" resname="PoorQualityCosts">
+        <source>PoorQualityCosts</source>
+        <target>Fehlerkosten</target>
+      </trans-unit>
+      <trans-unit id="K93caff" resname="Overhead">
+        <source>Overhead</source>
+        <target>Aufwand h</target>
+      </trans-unit>
+      <trans-unit id="BxGo1jb" resname="Risk">
+        <source>Risk</source>
+        <target>Risiko</target>
+      </trans-unit>
+      <trans-unit id="urN0Ftb" resname="AnalysisAndIdea">
+        <source>AnalysisAndIdea</source>
+        <target>Analyse u./o. Beschreibung der Idee</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions">
+        <source>Actions</source>
+        <target>Aktionen - Maßnahme - Projekte</target>
+      </trans-unit>
+      <trans-unit id=".XYrtFk" resname="ApprovedByManagement">
+        <source>ApprovedByManagement</source>
+        <target>OK der Geschäftsführung</target>
+      </trans-unit>
+      <trans-unit id="kDbuoE4" resname="ImplementedUntil">
+        <source>ImplementedUntil</source>
+        <target>Umsetzung bis</target>
+      </trans-unit>
+      <trans-unit id="GA7NvGS" resname="ImplementedBy">
+        <source>ImplementedBy</source>
+        <target>Umsetzung durch</target>
+      </trans-unit>
+      <trans-unit id="G3_U1Ht" resname="EffectivenessProofedBy">
+        <source>EffectivenessProofedBy</source>
+        <target>Wirksamkeit ermittelt von</target>
+      </trans-unit>
+      <trans-unit id="WJUr0kb" resname="EffectivenessProofedAt">
+        <source>EffectivenessProofedAt</source>
+        <target>Wirksamkeit ermittelt am</target>
+      </trans-unit>
+      <trans-unit id="23OiWBx" resname="EffectivenessProofedThrough">
+        <source>EffectivenessProofedThrough</source>
+        <target>Wirksamkeit ermittelt durch</target>
+      </trans-unit>
+      <trans-unit id="Ee1il8z" resname="Edit Corrective Action">
+        <source>Edit Corrective Action</source>
+        <target>__Edit Corrective Action</target>
+      </trans-unit>
+      <trans-unit id="c4QhaRi" resname="New Corrective Action">
+        <source>New Corrective Action</source>
+        <target>__New Corrective Action</target>
+      </trans-unit>
+      <trans-unit id="Kw3N1AA" resname="actions">
+        <source>actions</source>
+        <target>__actions</target>
+      </trans-unit>
+      <trans-unit id="haOas0X" resname="Yes">
+        <source>Yes</source>
+        <target>Ja</target>
+      </trans-unit>
+      <trans-unit id="HqRCoTS" resname="No">
+        <source>No</source>
+        <target>Nein</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

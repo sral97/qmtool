@@ -3,7 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\CorrectiveAction;
-use App\Form\CorrectiveActionType;
+use App\Entity\Incident;
+use App\Form\Type\CorrectiveActionType;
 use App\Repository\CorrectiveActionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -11,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/corrective/action")
+ * @Route("/correctiveAction")
  */
 class CorrectiveActionController extends AbstractController
 {
@@ -26,11 +27,12 @@ class CorrectiveActionController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="corrective_action_new", methods={"GET","POST"})
+     * @Route("/new/{incident}", name="corrective_action_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Incident $incident, Request $request): Response
     {
         $correctiveAction = new CorrectiveAction();
+        $correctiveAction->setIncident($incident);
         $form = $this->createForm(CorrectiveActionType::class, $correctiveAction);
         $form->handleRequest($request);
 
@@ -39,7 +41,7 @@ class CorrectiveActionController extends AbstractController
             $entityManager->persist($correctiveAction);
             $entityManager->flush();
 
-            return $this->redirectToRoute('corrective_action_index');
+            return $this->redirectToRoute('incident_show', ['id' => $incident->getId()]);
         }
 
         return $this->render('corrective_action/new.html.twig', [

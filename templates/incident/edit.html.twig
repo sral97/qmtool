@@ -6,7 +6,10 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <a href="{{ path('index') }}">Index</a> &gt; <a href="{{ path('incident_index') }}">{{ 'Incidents'|trans }}</a> &gt; {{ 'Edit Incident'|trans }}
+                <a href="{{ path('index') }}">Index</a>
+                &gt; <a href="{{ path('incident_index') }}">{{ 'Incidents'|trans }}</a>
+                &gt; <a href="{{ path('incident_show', {'id': incident.id}) }}">{{ 'Incident'|trans }} {{ incident.id }}</a>
+                &gt; {{ 'Edit Incident'|trans }}
 
                 <h1>Edit Incident</h1>
 
