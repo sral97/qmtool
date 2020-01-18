@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Incident;
+use App\Factory\IncidentFactory;
 use App\Form\Type\IncidentType;
 use App\Repository\IncidentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -28,9 +29,9 @@ class IncidentController extends AbstractController
     /**
      * @Route("/new", name="incident_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, IncidentFactory $incidentFactory): Response
     {
-        $incident = new Incident();
+        $incident = $incidentFactory->createIncident();
         $form = $this->createForm(IncidentType::class, $incident);
         $form->handleRequest($request);
 
