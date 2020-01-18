@@ -1,3 +1,6 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
     form_themes: ['bootstrap_4_horizontal_layout.html.twig']
+    globals:
+        date_format: '%env(default:default_date_format:DATE_FORMAT)%'
+        date_time_format: '%env(default:default_date_time_format:DATE_TIME_FORMAT)%'

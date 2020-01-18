@@ -18,11 +18,11 @@
                     </tr>
                     <tr>
                         <th>CreatedAt</th>
-                        <td>{{ incident.createdAt ? incident.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ incident.createdAt ? incident.createdAt|date(date_time_format) : '' }}</td>
                     </tr>
                     <tr>
                         <th>UpdatedAt</th>
-                        <td>{{ incident.updatedAt ? incident.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ incident.updatedAt ? incident.updatedAt|date(date_time_format) : '' }}</td>
                     </tr>
                     <tr>
                         <th>Reporter</th>
