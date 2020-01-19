@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Incident;
 use App\Factory\IncidentFactory;
+use App\Form\Type\ExtendedIncidentType;
 use App\Form\Type\IncidentType;
 use App\Repository\IncidentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -64,7 +65,7 @@ class IncidentController extends AbstractController
      */
     public function edit(Request $request, Incident $incident): Response
     {
-        $form = $this->createForm(IncidentType::class, $incident);
+        $form = $this->createForm(ExtendedIncidentType::class, $incident);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

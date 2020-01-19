@@ -12,6 +12,7 @@ class QmToolExtension extends AbstractExtension
     {
         return [
             new TwigFilter('incidentType', [$this, 'getIncidentType']),
+            new TwigFilter('price', [$this, 'priceFilter']),
         ];
     }
 
@@ -23,5 +24,10 @@ class QmToolExtension extends AbstractExtension
     public function getIncidentType(int $value): ?string
     {
         return Incident::getTypeName($value);
+    }
+
+    public function priceFilter(int $value): ?string
+    {
+        return number_format($value/100, 2, ',', '.');
     }
 }
