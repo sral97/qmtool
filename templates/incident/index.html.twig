@@ -43,8 +43,8 @@
                             <td>{{ incident.type }}</td>
                             <td>{{ incident.description }}</td>
                             <td>{{ incident.immediateAction }}</td>
-                            <td>{{ incident.fixed ? 'Yes' : 'No' }}</td>
-                            <td>{{ incident.correctiveActionNeeded ? 'Yes' : 'No' }}</td>
+                            <td>{{ (incident.fixed ? 'Yes' : 'No')|trans }}</td>
+                            <td>{{ (incident.correctiveActionNeeded ? 'Yes' : 'No')|trans }}</td>
                             <td>{{ incident.responsibleQualityManager }}</td>
 {#                            <td>{{ incident.poorQualityCosts }}</td>#}
 {#                            <td>{{ incident.overhead }}</td>#}

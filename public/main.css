@@ -1,0 +1,10 @@
+header {
+    background-color: black;
+    color: white;
+    margin-bottom: .5rem;
+    padding: 7.5px 0;
+}
+
+header #branding {
+    max-height: 2rem;
+}
