@@ -54,7 +54,7 @@
                     </tr>
                     <tr>
                         <th>{{ 'Poor quality costs'|trans }}</th>
-                        <td>{{ incident.poorQualityCosts|price }} &euro;</td>
+                        <td>{{ incident.poorQualityCosts ? incident.poorQualityCosts|price : '' }}</td>
                     </tr>
                     <tr>
                         <th>{{ 'Overhead'|trans }}</th>

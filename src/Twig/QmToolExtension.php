@@ -28,6 +28,6 @@ class QmToolExtension extends AbstractExtension
 
     public function priceFilter(int $value): ?string
     {
-        return number_format($value/100, 2, ',', '.');
+        return number_format($value/100, 2, ',', '.') . ' €';
     }
 }
